@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Calculator app</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <section class="calculator">
+        <header>
+          <div class="title">
+            <h1>Calculator</h1>
+          </div>
+          <div class="calculator-header">
+            <form action>
+              <h2>theme</h2>
+              <legend>
+                <div class="main-range">
+                  <label class="label">
+                    <span>1</span>
+                    <span>2</span>
+                    <span>3</span>
+                  </label>
+                  <input
+                    type="range"
+                    onchange="themeMode('blue-theme','light-theme','dark-theme')"
+                    id="range"
+                    min="1"
+                    max="3"
+                    name="theme"
+                    value="1"
+                  />
+                </div>
+              </legend>
+            </form>
+          </div>
+        </header>
+        <div class="calc-screen" id="screen">0</div>
+        <div class="calc-btns">
+          <button class="calc-btn" id="numb" data-num="7">7</button>
+          <button class="calc-btn" id="numb" data-num="8">8</button>
+          <button class="calc-btn" id="numb" data-num="9">9</button>
+          <button class="calc-btn del" id="dele">←</button>
+
+          <button class="calc-btn" id="numb" data-num="4">4</button>
+          <button class="calc-btn" id="numb" data-num="5">5</button>
+          <button class="calc-btn" id="numb" data-num="6">6</button>
+          <button class="calc-btn" id="opr" data-operator="+">+</button>
+
+          <button class="calc-btn" id="numb" data-num="1">1</button>
+          <button class="calc-btn" id="numb" data-num="2">2</button>
+          <button class="calc-btn" id="numb" data-num="3">3</button>
+          <button class="calc-btn" id="opr" data-operator="-">-</button>
+          <button class="calc-btn" id="numb" data-num="0">0</button>
+          <button class="calc-btn" id="dot">.</button>
+
+          <button class="calc-btn" id="opr" data-operator="/">÷</button>
+          <button class="calc-btn" id="opr" data-operator="*">×</button>
+          <button class="calc-btn reset" id="reset">reset</button>
+          <button class="calc-btn equal" id="equal">=</button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="https://github.com/jantoma">Jan Toma</a>.
+      </div>
+    </footer>
+  </body>
+  <script src="js/index.js"></script>
+</html>

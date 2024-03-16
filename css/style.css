@@ -1,0 +1,480 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "League Spartan", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100dvh;
+    max-width: 100vw;
+    flex-direction: column;
+    position: relative;
+    background: hsl(222, 26%, 15%);
+    transition: all .5s ease-in-out;
+}
+
+/* -------- Strat Theme One  ------- */
+.calculator {
+    width: 350px;
+    height: 525px;
+    background: #3a4764;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 7px #050608;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: auto;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    flex-direction: row;
+    transition: all 5s linear;
+}
+
+.label {
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+input[type="range"] {
+    transform: scale(1);
+    width: 40px;
+    height: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    height: 100%;
+    padding: 2px;
+    border-radius: 25px;
+    background-color: hsl(223, 28%, 25%);
+    box-shadow: inset 0 0 7px hsl(218, 40%, 12%);
+    transition: all .5s ease-in;
+    transform: scale(1.2);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    margin: auto 0;
+    background-color: hsl(6, 63%, 50%);
+    border: 2px solid #ffffffa1;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all .5s ease;
+    transform: scale(1.2);
+    box-shadow: 0px 0px 2px 3px #d30f0f69;
+}
+
+input[type="range"]::-moz-range-track {
+    height: 100%;
+    padding: 2px;
+    border-radius: 25px;
+    background-color: hsl(224, 36%, 15%);
+    box-shadow: inset 0 0 7px hsl(218, 40%, 12%);
+}
+
+input[type="range"]::-moz-range-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    margin: auto 0;
+    background-color: hsl(6, 63%, 50%);
+    border: 1px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.calculator-header {
+    font-size: 16px;
+    margin: 0 auto;
+    align-items: center;
+    padding-bottom: 10px;
+    color: #fff;
+}
+
+h1 {
+    color: #fff;
+    font-size: 15px;
+    text-align: left;
+}
+
+h2 {
+    padding: 10px 15px 0 145px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.calc-screen {
+    width: 100%;
+    line-height: 60px;
+    height: 75px;
+    border: none;
+    text-align: right;
+    padding: 10px 20px;
+    font-size: 20pt;
+    text-align: right;
+    border-radius: 10px;
+    margin-bottom: 70px;
+    color: #ccc;
+    background-color: hsl(224, 36%, 15%);
+    box-shadow: inset 0 0 7px hsl(218, 40%, 12%);
+}
+
+.calc-btns {
+    width: 100%;
+    padding: 14px 0rem 14px 14px;
+    margin-top: -50px;
+    row-gap: 10px;
+    display: grid;
+    grid-template-columns: minmax(auto, 1fr) repeat(3, 1fr);
+    cursor: pointer;
+    background-color: hsl(223, 31%, 20%);
+    border-radius: 10px;
+    box-shadow: inset 0 0 3px hsl(218, 40%, 12%);
+}
+
+.calc-btn {
+    width: calc(100% - 18px);
+    height: 50px;
+    border-radius: 3px;
+    font-size: 30px;
+    font-weight: 700;
+    cursor: pointer;
+    background: hsl(30, 25%, 89%);
+    border: none;
+    box-shadow: 0px 2px 2px 1px hsl(28, 16%, 65%);
+    transition: all .2s ease-in-out;
+}
+
+.calc-btn:hover {
+    background: #b7b2b2;
+    box-shadow: inset 0 0 8px hsl(28, 16%, 60%), inset 0 0 16px hsl(28, 16%, 65%);
+    transition: all .2s ease-in-out;
+    transform: scale(1) translateY(-.2rem);
+}
+
+.calc-btn.active {
+    background: #b7b2b2 ;
+    box-shadow: inset 0 0 8px hsl(28, 16%, 60%), inset 0 0 16px hsl(28, 16%, 65%);
+    transition: all .2s ease-in-out;
+    transform: scale(1) translateY(-.2rem) ;
+}
+
+.del {
+    background-color: hsl(225, 21%, 49%);
+    box-shadow: 0px 2px 2px 1px hsl(224, 28%, 35%);
+    color: #fff;
+}
+
+.reset {
+    width: calc(100% - 17px);
+    height: 50px;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: hsl(225, 21%, 49%);
+    box-shadow: 0px 2px 2px 1px hsl(224, 28%, 35%);
+    grid-column: 1 / span 2;
+}
+
+.reset.active {
+    color: #fff;
+    background-color: hsl(225, 21%, 49%);
+    box-shadow: 0px 2px 2px 1px hsl(224, 28%, 35%);
+    transform: none;
+}
+
+.del:hover,
+.reset:hover {
+    background: hsl(226, 17%, 51%);
+}
+
+.equal {
+    height: 50px;
+    color: #fff;
+    background-color: hsl(6, 63%, 50%);
+    box-shadow: 0px 2px 2px 1px hsl(6, 70%, 34%);
+    grid-column: 3 / span 2;
+}
+
+.equal:hover {
+    background: hsl(25, 98%, 40%);
+}
+
+/* ------ End Theme One ------*/
+
+/*! -------- Start Theme Two ------- */
+
+
+.light-theme {
+    background: hsl(0, 100%, 100%)
+}
+
+.light-theme input[type="range"]::-webkit-slider-runnable-track {
+    height: 100%;
+    padding: 2px;
+    border-radius: 25px;
+    background: hsl(0, 5%, 81%);
+    box-shadow: inset 0 0 4px hsl(0, 1%, 27%);
+}
+
+.light-theme input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    margin: auto 0;
+    background-color: hsl(6, 63%, 50%);
+    border: 1px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.light-theme input[type="range"]::-moz-range-track {
+    height: 100%;
+    padding: 2px;
+    border-radius: 25px;
+    background: hsl(0, 5%, 81%);
+    box-shadow: inset 0 0 4px hsl(0, 1%, 27%);
+}
+
+.light-theme input[type="range"]::-moz-range-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    margin: auto 0;
+    background-color: hsl(6, 63%, 50%);
+    border: 1px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.light-theme h1,
+.light-theme h2,
+.light-theme label {
+    color: #141313;
+}
+
+.light-theme .calculator {
+    background-color: hsl(0, 0%, 90%);
+    box-shadow: 0px 0px 6px rgb(155, 155, 145);
+}
+
+.light-theme .calc-btns {
+    background: hsl(0, 5%, 81%);
+}
+
+.light-theme .calc-btn {
+    background-color: hsl(45, 7%, 89%);
+    color: #141313;
+}
+
+.light-theme .calc-btn:hover {
+    color: #ccc;
+    background-color: rgb(82, 79, 82);
+}
+
+.light-theme .calc-btn.active {
+    box-shadow: inset 0 0 8px hsl(28, 16%, 60%), inset 0 0 16px hsl(28, 16%, 65%);
+    transition: all .2s ease-in-out;
+    transform: scale(1) translateY(-.2rem);
+}
+
+.light-theme .calc-screen {
+    color: #141313;
+    background: hsl(0, 5%, 81%);
+}
+
+.light-theme .del {
+    color: #fff;
+    background-color: hsl(185, 42%, 37%);
+    box-shadow: 0px 2px 2px 1px hsl(185, 58%, 25%);
+}
+
+.light-theme .reset {
+    color: #fff;
+    background-color: hsl(185, 42%, 37%);
+    box-shadow: 0px 2px 2px 1px hsl(185, 58%, 25%);
+}
+
+.light-theme .reset.active {
+    color: #fff;
+    background-color: hsl(185, 42%, 37%);
+    box-shadow: 0px 2px 2px 1px hsl(185, 58%, 25%);
+    transform: rotate(360deg);
+}
+
+.light-theme .del:hover,
+.light-theme .reset:hover {
+    background-color: hsl(185, 58%, 25%)
+}
+
+.light-theme .equal {
+    color: #fff;
+    background-color: hsl(6, 63%, 50%);
+    box-shadow: 0px 2px 2px 1px hsl(6, 70%, 34%);
+}
+
+.light-theme .equal:hover {
+    background: hsl(25, 98%, 40%);
+}
+
+/*! -------- End Theme Two --------- */
+
+/*? -------- Start Theme Three ------ */
+.dark-theme {
+    background-color: hsl(269, 70%, 6%);
+}
+
+.dark-theme input[type="range"]::-webkit-slider-runnable-track {
+    height: 100%;
+    padding: 2px;
+    border-radius: 25px;
+    background-color: hsl(268, 47%, 21%);
+    box-shadow: inset 0 0 4px hsl(0, 1%, 27%);
+}
+
+.dark-theme input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    margin: auto 0;
+    background-color: hsl(176, 100%, 44%);
+    border: 1px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dark-theme input[type="range"]::-moz-range-track {
+    height: 100%;
+    padding: 2px;
+    border-radius: 25px;
+    background-color: hsl(268, 47%, 21%);
+    box-shadow: inset 0 0 4px hsl(0, 1%, 27%);
+}
+
+.dark-theme input[type="range"]::-moz-range-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    margin: auto 0;
+    background-color: hsl(176, 100%, 44%);
+    border: 1px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+.dark-theme h1,
+.dark-theme h2,
+.dark-theme label {
+    color: hsl(52, 100%, 62%);
+}
+
+.dark-theme .calculator {
+    background-color: hsl(268, 71%, 12%);
+    box-shadow: 0px 0px 7px hsl(266, 65%, 30%);
+}
+
+.dark-theme .calc-btns {
+    background-color: hsl(268, 47%, 21%);
+}
+
+.dark-theme .calc-btn {
+    background-color: hsl(268, 71%, 12%);
+    box-shadow: 0px 2px 2px 1px hsl(281, 100%, 52%);
+    color: hsl(52, 100%, 62%);
+    transition: all .2s ease-in-out;
+}
+
+.dark-theme .calc-btn:hover {
+    color: #ccc;
+    background-color: hsl(285, 91%, 52%);
+    box-shadow: inset 0 0 8px hsl(281, 89%, 26%), inset 0 0 16px hsl(281, 89%, 20%);
+    transform: scale(1) translateY(-.2rem);
+}
+
+.dark-theme .calc-btn.active {
+    box-shadow: inset 0 0 8px hsl(28, 16%, 60%), inset 0 0 16px hsl(28, 16%, 65%);
+    transition: all .2s ease-in-out;
+    transform: scale(1) translateY(-.2rem);
+}
+
+.dark-theme .calc-screen {
+    color: hsl(52, 100%, 62%);
+    background-color: hsl(268, 47%, 21%);
+}
+
+.dark-theme .reset,
+.dark-theme .del {
+    color: #fff;
+    background-color: hsl(268, 61%, 32%);
+    box-shadow: 0px 2px 2px 1px hsl(281, 100%, 52%);
+    transition: all .2s ease-in-out;
+}
+
+.dark-theme .del:hover,
+.dark-theme .reset:hover {
+    background-color: hsl(281, 89%, 26%);
+    transform: scale(1) translateY(-.2rem);
+}
+
+.dark-theme .equal {
+    color: #100f0f;
+    background-color: hsl(176, 100%, 44%);
+    box-shadow: 0px 2px 2px 1px hsl(177, 91%, 83%);
+    transition: all .2s ease-in-out;
+}
+
+.dark-theme .equal:hover {
+    color: #100f0f;
+    background: hsl(177, 92%, 70%);
+    transform: scale(1) translateY(-.2rem);
+}
+
+/*? -------- End Theme Three ------ */
+
+
+footer {
+    position: absolute;
+    bottom: 0;
+}
